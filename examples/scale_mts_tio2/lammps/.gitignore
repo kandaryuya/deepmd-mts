@@ -1,0 +1,4 @@
+log.lammps
+*.dump
+*.restart
+tio2_anatase_12000.lmp

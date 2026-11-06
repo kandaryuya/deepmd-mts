@@ -1,0 +1,39 @@
+# Initialize
+units metal
+boundary p p p
+atom_style atomic
+
+neighbor        2.0 bin
+neigh_modify    every 10 delay 0 check yes
+
+# Atomic definition
+read_data ../../structure/tio2_anatase_12.lmp
+mass 1 47.867 #Ti
+mass 2 15.999 #O
+replicate 10 10 10
+write_data tio2_anatase_12000.lmp
+
+# Potential file settings
+pair_style deepmd/mts ../../models/4ang.pb ../../models/6ang.pb timestep 4
+pair_coeff * * Ti O
+
+# Initial speed settings
+velocity all create 300 1234567
+
+# Simulation settings
+timestep 0.001
+fix 1 all npt temp 300.0 300.0 $(100.0*dt) iso 1.0 1.0 $(1000.0*dt)
+
+thermo 100
+thermo_style custom step time temp press pe ke etotal evdwl enthalpy vol density lx ly lz pxx pyy pzz pxy pxz pyz
+
+# Equilibration
+dump 1 all custom 1000 tio2_anatase.dump id type xu yu zu vx vy vz fx fy fz
+run 1000000
+write_restart tio2_anatase.restart
+
+undump 1
+
+dump 2 all custom 100 tio2_anatase_additional_step1000.dump id type xu yu zu vx vy vz fx fy fz
+run 1000
+write_restart tio2_anatase_additional_step1000.restart

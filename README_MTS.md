@@ -111,7 +111,7 @@ Potential energies recorded for 20 steps showed the expected
 2-step and 4-step switching patterns.
 
 These tests do not replace full production-scale validation.
-Model files and proprietary datasets are not distributed.
+The TiO2 example models are included in examples/scale_mts_tio2/models. Training datasets are not included.
 
 ## License and citation
 
