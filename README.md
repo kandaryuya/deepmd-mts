@@ -1,6 +1,11 @@
 ]633;E;printf '## Scale MTS extension\\n\\n';742b1505-482f-4590-a97d-54781ff19498]633;C## Scale MTS extension
 
-For GPU installation and usage, see [README_MTS.md](README_MTS.md).
+This fork of DeePMD-kit adds the `deepmd/mts` LAMMPS pair style,
+which switches between two Deep Potential models at specified MD steps.
+
+- [GPU installation and MTS usage](README_MTS.md)
+- [TiO2 example: models, LAMMPS inputs, and analysis](examples/scale_mts_tio2/README.md)
+- [Associated publication](https://doi.org/10.1002/aidi.70152)
 
 ---
 

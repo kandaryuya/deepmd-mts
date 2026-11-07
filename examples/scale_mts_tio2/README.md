@@ -44,7 +44,7 @@ These commands use the original production simulation settings.
 Install the required Python packages:
 
 ~~~bash
-python -m pip install numpy matplotlib ovito
+python -m pip install 'numpy==1.26.4' matplotlib 'ovito==3.15.5'
 ~~~
 
 After completing the MD simulations:

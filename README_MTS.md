@@ -21,7 +21,9 @@ Based on DeePMD-kit commit:
 ## GPU installation
 
 Run these commands from the repository root.
-CUDA Toolkit 12.3 must be installed at `/usr/local/cuda-12.3`.
+The reference build uses CUDA Toolkit 12.3 at `/usr/local/cuda-12.3`.
+An independent build and smoke test also succeeded with CUDA 12.1.
+Adjust `CUDA_HOME` to match your installation.
 
 ~~~bash
 conda create -n mts-release-build python=3.11 cmake=3.27 pip -y
@@ -116,5 +118,22 @@ The TiO2 example models are included in examples/scale_mts_tio2/models. Training
 ## License and citation
 
 See `LICENSE` for the original DeePMD-kit license.
-The paper citation and contributor attribution will be
-finalized before public release.
+This implementation is based on DeePMD-kit, with the original
+license and upstream acknowledgements retained (see `LICENSE`
+and `README.md`).
+
+Scale MTS publication:
+
+R. Kanda, M. Yamazaki, Y. Yoshimoto, S. Izumi, A. Inoue,
+H. Kawaguchi, and Y. Sakai,
+"Multiscale and Multi-Timestep Switching of Multiple Machine
+Learning Force Fields for Artificial Intelligence-Driven
+Materials Simulations,"
+*Advanced Intelligent Discovery*, e70152 (2026).
+https://doi.org/10.1002/aidi.70152
+
+This repository provides the Scale MTS implementation and a
+TiO2 demonstration, including pre-trained models, simulation
+inputs, and analysis scripts. PEG simulations, additional
+optimization experiments, training datasets, and full production
+trajectories are not included.

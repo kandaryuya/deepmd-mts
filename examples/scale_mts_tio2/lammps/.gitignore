@@ -2,3 +2,6 @@ log.lammps
 *.dump
 *.restart
 tio2_anatase_12000.lmp
+/thermo/
+/rdf_pair_compare/
+/block_average/
